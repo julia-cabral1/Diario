@@ -13,6 +13,7 @@
         </div>
         
         <div id="menu">
+            <div id="botao6" onclick="location.href='sobreosite.html'">Sobre o Site</div>
             <div id="botao1" onclick="location.href='index.html'">Sobre Mim</div>
             <div id="botao2" onclick="location.href='amigos.html'">Amigos</div>
             <div id="botao3" onclick="location.href='ifto.html'">IFTO</div>
@@ -29,6 +30,11 @@
                     <div class="form-group">
                         <label for="nome">Seu Nome:</label>
                         <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone">Seu Telefone (opcional):</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{11}" placeholder="(00) 00000-0000">
                     </div>
                     
                     <div class="form-group">
@@ -59,9 +65,10 @@
                     <div class="footer-content">
                         <div class="social-links">
                             <a href="https://www.instagram.com/jucrmo/#/" target="_blank" rel="noopener noreferrer">
-                                <img src="./imagem/download (9).jpg" alt="Instagram">
+                                <img src="./imagem/download__9_-removebg-preview.png" alt="Instagram">
                                 <span>Instagram</span>
                             </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,12 +80,6 @@
         </div>
     </div>
     
-    <script>
-        document.getElementById('form-contato').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Obrigada por sua mensagem! Responderei em breve 💖');
-            this.reset();
-        });
-    </script>
+    <script src="./JS/script.js"></script>
 </body>
 </html>

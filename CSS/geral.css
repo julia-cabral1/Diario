@@ -71,7 +71,9 @@
 #botao5 {
     background-color: #ff99bb; /* Destaque para o botão ativo */
 }
-
+#botao6 {
+    background-color: #ff99bb; /* Destaque para o botão ativo */
+}
 
 #menu div:hover {
     background-color: #ff99bb;
@@ -357,3 +359,63 @@
             grid-template-columns: 1fr;
         }
     }
+    #menu div {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #menu div:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(214, 51, 108, 0.3);
+    }
+    
+    #menu div::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: 0.5s;
+    }
+    
+    #menu div:hover::after {
+        left: 100%;
+    }
+    
+    /* Pulsação suave para o botão ativo */
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    
+    #menu div:active {
+        animation: pulse 0.3s ease;
+    }
+    /* Animações dos botões */
+#menu div {
+    transition: all 0.3s ease;
+}
+
+/* Botão de enviar */
+.btn-enviar {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-enviar:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Efeitos para campos do formulário */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #d6336c !important;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(214, 51, 108, 0.2);
+}
