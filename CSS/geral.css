@@ -1,3 +1,4 @@
+/* ESTILOS GERAIS */
 #corpo {
     border: 3px solid black;
     width: 90%;
@@ -9,8 +10,6 @@
 
 #topo {
     border: 3px solid #ff66b3;
-    width: auto;
-    height: auto;
     padding: 20px;
     text-align: center;
     background-color: #ffe6f2;
@@ -28,6 +27,7 @@
     margin: 5px 0 0;
 }
 
+/* MENU */
 #menu {
     border: 2px solid #ff66b3;
     width: 100%;
@@ -50,36 +50,14 @@
     margin: 5px;
     flex: 1;
     min-width: 80px;
-}
-
-#botao1 {
-    background-color: #ff99bb; /* Destaque para o botão ativo */
-}
-
-#botao2 {
-    background-color: #ff99bb; /* Destaque para o botão ativo */
-}
-
-#botao3 {
-    background-color: #ff99bb; /* Destaque para o botão ativo */
-}
-
-#botao4 {
-    background-color: #ff99bb; /* Destaque para o botão ativo */
-}
-
-#botao5 {
-    background-color: #ff99bb; /* Destaque para o botão ativo */
-}
-#botao6 {
-    background-color: #ff99bb; /* Destaque para o botão ativo */
+    background-color: #ff99bb;
 }
 
 #menu div:hover {
-    background-color: #ff99bb;
     transform: scale(1.05);
 }
 
+/* CONTEÚDO */
 #conteudo {
     padding: 20px;
     text-align: center;
@@ -97,12 +75,6 @@
     margin-top: 0;
 }
 
-.post-data {
-    color: #888;
-    font-size: 0.9em;
-    margin-bottom: 10px;
-}
-
 .imagem-projeto {
     max-width: 100%;
     height: auto;
@@ -111,21 +83,7 @@
     border: 2px solid #ffccdd;
 }
 
-#rodape {
-    text-align: center;
-    padding: 15px;
-    background-color: #ffccdd;
-    color: #a61e4d;
-    border-top: 3px solid #ff66b3;
-}
-
-@media (max-width: 600px) {
-    #menu div {
-        padding: 8px 5px;
-        font-size: 0.9em;
-        min-width: 60px;
-    }
-}
+/* FORMULÁRIO DE CONTATO */
 #form-contato {
     max-width: 500px;
     margin: 20px auto;
@@ -151,65 +109,64 @@
     border: 2px solid #ffccdd;
     border-radius: 5px;
     font-family: inherit;
+    box-sizing: border-box;
 }
 
 .form-group textarea {
     resize: vertical;
+    min-height: 100px;
 }
 
 .btn-enviar {
     background-color: #d6336c;
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 12px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+    width: 100%;
     transition: background-color 0.3s;
-    display: block;
-    margin: 20px auto;
 }
 
 .btn-enviar:hover {
     background-color: #a61e4d;
 }
 
-.redes-sociais {
-    margin-top: 30px;
-    text-align: center;
+/* GALERIAS */
+.galeria, .galeria-ifto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.social-icon img {
-    width: 40px;
-    height: 40px;
+.galeria img, .galeria-ifto img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #ff99bb;
     transition: transform 0.3s;
 }
 
-.social-icon:hover img {
-    transform: scale(1.1);
+.galeria img:hover, .galeria-ifto img:hover {
+    transform: scale(1.05);
 }
 
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* RODAPÉ */
+#rodape {
+    text-align: center;
+    padding: 15px;
+    background-color: #ffccdd;
+    color: #a61e4d;
+    border-top: 3px solid #ff66b3;
 }
 
+/* REDES SOCIAIS */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+    gap: 20px;
+    margin: 15px 0;
 }
 
 .social-links a {
@@ -218,16 +175,14 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.3s ease;
     padding: 10px 15px;
     border-radius: 50px;
-    background:#a61e4d;
+    background: #a61e4d;
+    transition: transform 0.3s;
 }
 
 .social-links a:hover {
-    color: #e6e6fa;
     transform: translateY(-3px);
-    background:#a61e4d;
 }
 
 .social-links img {
@@ -235,424 +190,15 @@
     height: 24px;
 }
 
-.footer-copyright {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-top: 10px;
-}
-.galeria {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.galeria img {
-    width: 30%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border: 2px solid #ff99bb;
-    transition: transform 0.3s;
-}
-
-.galeria img:hover {
-    transform: scale(1.05);
-}
-
-.post h3 {
-    color: #d6336c;
-    margin: 25px 0 10px;
-    border-bottom: 1px dashed #ff99bb;
-    padding-bottom: 5px;
-}
-.grade-curricular {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.materia {
-    background-color: #ffccdd;
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: 1px solid #d6336c;
-    color: #a61e4d;
-    font-weight: bold;
-}
-
-.destaque {
-    background-color: #ffe6f2;
-    padding: 15px;
-    border-left: 4px solid #ff66b3;
-    margin: 20px 0;
-}
-
-.galeria-ifto {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin: 25px 0;
-}
-
-.galeria-ifto img {
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #ff99bb;
-}
-
-
-    .show-card {
-        background-color: #ffe6f2;
-        border-radius: 10px;
-        padding: 20px;
-        margin: 20px auto;
-        border: 2px solid #ff99bb;
-        max-width: 550px;
-    }
-    
-    .setlist {
-        columns: 2;
-        column-gap: 20px;
-        margin: 15px 0;
-    }
-    
-    .setlist li {
-        margin-bottom: 8px;
-        list-style-type: none;
-        position: relative;
-        padding-left: 20px;
-    }
-    
-    .setlist li:before {
-        content: "🎵";
-        position: absolute;
-        left: 0;
-    }
-    
-    .dupla-title {
-        color: #d6336c;
-        border-bottom: 2px dashed #ff66b3;
-        display: inline-block;
-        margin-bottom: 10px;
-    }
-    
-    .galeria-shows {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin: 20px 0;
-    }
-    
-    .galeria-shows img {
-        width: 100%;
-        border-radius: 8px;
-        border: 2px solid #ffccdd;
-    }
-    
-    @media (max-width: 600px) {
-        .setlist {
-            columns: 1;
-        }
-        .galeria-shows {
-            grid-template-columns: 1fr;
-        }
-    }
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
     #menu div {
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        position: relative;
-        overflow: hidden;
+        padding: 8px 5px;
+        font-size: 0.9em;
+        min-width: 60px;
     }
     
-    #menu div:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(214, 51, 108, 0.3);
+    .galeria, .galeria-ifto {
+        grid-template-columns: 1fr;
     }
-    
-    #menu div::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transition: 0.5s;
-    }
-    
-    #menu div:hover::after {
-        left: 100%;
-    }
-    
-    /* Pulsação suave para o botão ativo */
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-    
-    #menu div:active {
-        animation: pulse 0.3s ease;
-    }
-    /* Animações dos botões */
-#menu div {
-    transition: all 0.3s ease;
-}
-
-/* Botão de enviar */
-.btn-enviar {
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.btn-enviar:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-/* Efeitos para campos do formulário */
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color: #d6336c !important;
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(214, 51, 108, 0.2);
-}
-/* Adicione isso ao seu arquivo CSS/geral.css */
-
-/* Estilo para o overlay de fundo desfocado */
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    display: none;
-}
-
-/* Estilo para a caixa de mensagem de erro */
-#error-message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffebee;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 1001;
-    display: none;
-    max-width: 80%;
-    text-align: center;
-}
-
-#error-message p {
-    color: #d32f2f;
-    margin: 0;
-}
-
-#error-message button {
-    margin-top: 15px;
-    padding: 8px 16px;
-    background-color: #d32f2f;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-#form-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    display: none;
-}
-
-   font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        h1, h2 {
-            color: #4a6fa5;
-        }
-        
-        .form-container {
-            background-color: #f9f9f9;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin: 20px 0;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .error-message {
-            color: #ff4444;
-            font-size: 0.85em;
-            margin-top: 5px;
-            display: none;
-        }
-        
-        input:invalid, textarea:invalid {
-            border-color: #ff4444;
-        }
-        
-        input:invalid + .error-message,
-        textarea:invalid + .error-message {
-            display: block;
-        }
-        
-        .btn-submit {
-            background-color: #4a6fa5;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-        
-        .btn-submit:hover {
-            background-color: #3a5a8a;
-        }
-        
-        .social-media {
-            text-align: center;
-            margin-top: 30px;
-        }
-        
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            color: #4a6fa5;
-            margin: 0 10px;
-        }
-        
-        .social-link img {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
-        }
-/* Estilização do Formulário de Contato */
-#form-contato {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffe6f2;
-    border-radius: 10px;
-    border: 2px solid #ff66b3;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #d6336c;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ff99bb;
-    border-radius: 5px;
-    background-color: #fff0f5;
-    color: #a61e4d;
-    font-family: inherit;
-    box-sizing: border-box;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #d6336c;
-    background-color: #fff;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* Estilização uniforme para todos os campos */
-input, select, textarea {
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-/* Estilização do botão */
-.btn-enviar {
-    background-color: #d6336c;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: all 0.3s;
-    display: block;
-    margin: 20px auto 0;
-    width: 100%;
-}
-
-.btn-enviar:hover {
-    background-color: #a61e4d;
-    transform: translateY(-2px);
-}
-
-/* Placeholder em tom de rosa mais claro */
-::placeholder {
-    color: #d8a1b9;
-    opacity: 1;
-}
-
-/* Estilo para o dropdown */
-select {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d6336c'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 20px;
-    padding-right: 30px;
 }
