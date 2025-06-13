@@ -226,3 +226,10 @@
         grid-template-columns: 1fr;
     }
 }
+#rodape {
+    text-align: center;
+    padding: 15px;
+    background-color: #ffccdd;
+    color: #a61e4d;
+    border-top: 3px solid #ff66b3;
+}
