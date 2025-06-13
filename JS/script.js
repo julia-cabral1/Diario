@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Cria elementos para a mensagem e overlay
+    // Cria elementos para mensagem e overlay
+    const body = document.body;
+    
     const overlay = document.createElement('div');
-    overlay.id = 'overlay';
+    overlay.id = 'form-overlay';
     overlay.style.cssText = `
         position: fixed;
         top: 0;
@@ -13,84 +15,93 @@ document.addEventListener('DOMContentLoaded', function() {
         z-index: 1000;
         display: none;
     `;
-    
+    body.appendChild(overlay);
+
     const messageBox = document.createElement('div');
-    messageBox.id = 'error-message';
+    messageBox.id = 'form-message';
     messageBox.style.cssText = `
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: #ffebee;
+        background-color: white;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
         z-index: 1001;
         display: none;
         max-width: 80%;
         text-align: center;
     `;
-    
-    document.body.appendChild(overlay);
-    document.body.appendChild(messageBox);
+    body.appendChild(messageBox);
 
-    // Função para mostrar mensagem de erro
-    function showError(message) {
-        messageBox.innerHTML = `<p style="color: #d32f2f; margin: 0;">${message}</p>
-                               <button id="close-message" style="margin-top: 15px; padding: 8px 16px; 
-                               background-color: #d32f2f; color: white; border: none; border-radius: 4px; 
-                               cursor: pointer;">OK</button>`;
-        
+    // Função para mostrar mensagem
+    function showMessage(message) {
+        messageBox.innerHTML = `
+            <p style="color: #d32f2f; margin: 0 0 15px 0;">${message}</p>
+            <button onclick="closeMessage()" style="
+                padding: 8px 16px;
+                background-color: #d32f2f;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            ">OK</button>
+        `;
         messageBox.style.display = 'block';
         overlay.style.display = 'block';
-        
-        document.getElementById('close-message').addEventListener('click', function() {
-            messageBox.style.display = 'none';
-            overlay.style.display = 'none';
-        });
+    }
+
+    // Função para fechar mensagem (agora global)
+    window.closeMessage = function() {
+        messageBox.style.display = 'none';
+        overlay.style.display = 'none';
     }
 
     // Validação do formulário
-    document.getElementById('form-contato').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const mensagem = document.getElementById('mensagem').value.trim();
-        
-        // Verifica campos obrigatórios
-        if (!nome) {
-            showError('Por favor, preencha seu nome.');
-            document.getElementById('nome').focus();
-            return;
-        }
-        
-        if (!email) {
-            showError('Por favor, preencha seu e-mail.');
-            document.getElementById('email').focus();
-            return;
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            showError('Por favor, insira um e-mail válido.');
-            document.getElementById('email').focus();
-            return;
-        }
-        
-        if (!mensagem) {
-            showError('Por favor, escreva sua mensagem.');
-            document.getElementById('mensagem').focus();
-            return;
-        }
-        
-        // Se tudo estiver preenchido corretamente, pode enviar o formulário
-        this.submit();
-    });
+    const form = document.getElementById('form-contato');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
 
-    // Validação do telefone (opcional, mas se preenchido, deve estar correto)
-    document.getElementById('telefone').addEventListener('blur', function() {
-        const telefone = this.value.trim();
-        if (telefone && !/^[0-9]{11}$/.test(telefone)) {
-            showError('Por favor, insira um telefone válido (apenas números, 11 dígitos).');
-            this.focus();
-        }
-    });
+            // Validações
+            if (!nome) {
+                showMessage('Por favor, preencha seu nome.');
+                document.getElementById('nome').focus();
+                return false;
+            }
+
+            if (!email) {
+                showMessage('Por favor, preencha seu e-mail.');
+                document.getElementById('email').focus();
+                return false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage('Por favor, insira um e-mail válido.');
+                document.getElementById('email').focus();
+                return false;
+            }
+
+            if (telefone && !/^[0-9]{11}$/.test(telefone)) {
+                showMessage('O telefone deve conter 11 dígitos numéricos.');
+                document.getElementById('telefone').focus();
+                return false;
+            }
+
+            if (!mensagem) {
+                showMessage('Por favor, escreva sua mensagem.');
+                document.getElementById('mensagem').focus();
+                return false;
+            }
+
+            // Se tudo estiver ok, pode enviar
+            alert('Formulário válido! Enviando...'); // Substitua por AJAX ou form.submit()
+            // form.submit(); // Descomente para enviar realmente
+            return true;
+        });
+    }
 });
