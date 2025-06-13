@@ -13,7 +13,6 @@
         </div>
         
         <div id="menu">
-            <div id="botao6" onclick="location.href='sobreosite.html'">Sobre o Site</div>
             <div id="botao1" onclick="location.href='index.html'">Sobre Mim</div>
             <div id="botao2" onclick="location.href='amigos.html'">Amigos</div>
             <div id="botao3" onclick="location.href='ifto.html'">IFTO</div>
@@ -21,56 +20,70 @@
             <div id="botao5" onclick="location.href='contato.html'">Contato</div>
         </div>
         
-       <div id="conteudo">
-           <div class="form-container">
-        <h2>Fale Comigo!</h2>
-        <p>Adoraria ouvir sua mensagem! Preencha o formulário abaixo ou me encontre nas redes sociais.</p>
+        <div id="conteudo">
+            <div class="post">
+                <h2>Fale Comigo!</h2>
+                <p>Adoraria ouvir sua mensagem! Preencha o formulário abaixo ou me encontre nas redes sociais.</p>
+                
+                <form id="form-contato">
+                    <div class="form-group">
+                        <label for="nome">Seu Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone">Seu Telefone (opcional):</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{11}" placeholder="(00) 00000-0000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Seu E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="assunto">Assunto:</label>
+                        <select id="assunto" name="assunto">
+                            <option value="elogio">Elogio</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensagem">Sua Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+                </form>
+                
+                <div class="redes-sociais">
+                    <h3>Ou me encontre nas redes sociais:</h3>
+                    <div class="footer-content">
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/jucrmo/#/" target="_blank" rel="noopener noreferrer">
+                                <img src="./imagem/download (9).jpg" alt="Instagram">
+                                <span>Instagram</span>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <form id="contact-form">
-            <div class="form-group">
-                <label for="name">Seu Nome:</label>
-                <input type="text" id="name" name="name" required>
-                <div class="error-message">Este campo é obrigatório</div>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">Seu Telefone (opcional):</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="(00) 00000-0000">
-                <div class="error-message">Digite 11 números (sem espaços ou caracteres)</div>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Seu E-mail:</label>
-                <input type="email" id="email" name="email" required>
-                <div class="error-message">Por favor, insira um e-mail válido</div>
-            </div>
-            
-            <div class="form-group">
-                <label for="subject">Assunto:</label>
-                <select id="subject" name="subject">
-                    <option value="compliment">Elogio</option>
-                    <option value="suggestion">Sugestão</option>
-                    <option value="question">Dúvida</option>
-                    <option value="other">Outro</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Sua Mensagem:</label>
-                <textarea id="message" name="message" required></textarea>
-                <div class="error-message">Este campo é obrigatório</div>
-            </div>
-            
-            <button type="submit" class="btn-submit">Enviar Mensagem</button>
-        </form>
-        
-        <div class="social-media">
-            <h3>Ou me encontre nas redes sociais:</h3>
-            <a href="https://www.instagram.com/jucrmo/#/" class="social-link" target="_blank">
-                <img src="imagem/download__9_-removebg-preview.png" alt="Instagram">
-                <span>Instagram</span>
-            </a>
+        <div id="rodape">
+            <p>Diário Quase Secreto © 2025 - Todos os direitos reservados</p>
+            <p>Contato: julia.carmo@estudante.ifto.edu.br</p>
         </div>
     </div>
+    
+    <script>
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigada por sua mensagem! Responderei em breve 💖');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
