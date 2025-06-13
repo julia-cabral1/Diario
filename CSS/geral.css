@@ -568,3 +568,91 @@
             height: 24px;
             margin-right: 8px;
         }
+/* Estilização do Formulário de Contato */
+#form-contato {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffe6f2;
+    border-radius: 10px;
+    border: 2px solid #ff66b3;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #d6336c;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ff99bb;
+    border-radius: 5px;
+    background-color: #fff0f5;
+    color: #a61e4d;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d6336c;
+    background-color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Estilização uniforme para todos os campos */
+input, select, textarea {
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Estilização do botão */
+.btn-enviar {
+    background-color: #d6336c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s;
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background-color: #a61e4d;
+    transform: translateY(-2px);
+}
+
+/* Placeholder em tom de rosa mais claro */
+::placeholder {
+    color: #d8a1b9;
+    opacity: 1;
+}
+
+/* Estilo para o dropdown */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d6336c'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 30px;
+}
