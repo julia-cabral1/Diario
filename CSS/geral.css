@@ -1,4 +1,4 @@
-/* ESTILOS GERAIS */
+/* ESTRUTURA PRINCIPAL */
 #corpo {
     border: 3px solid black;
     width: 90%;
@@ -27,7 +27,7 @@
     margin: 5px 0 0;
 }
 
-/* MENU */
+/* MENU PRINCIPAL */
 #menu {
     border: 2px solid #ff66b3;
     width: 100%;
@@ -75,11 +75,50 @@
     margin-top: 0;
 }
 
+/* ESTILOS DE IMAGEM (MANTIDOS INTACTOS) */
 .imagem-projeto {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin: 10px 0;
+    border: 2px solid #ffccdd;
+}
+
+.galeria {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.galeria img {
+    width: 30%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #ff99bb;
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+.galeria-ifto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.galeria-ifto img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #ff99bb;
+}
+
+.show-card img {
+    width: 100%;
+    border-radius: 8px;
     border: 2px solid #ffccdd;
 }
 
@@ -109,7 +148,6 @@
     border: 2px solid #ffccdd;
     border-radius: 5px;
     font-family: inherit;
-    box-sizing: border-box;
 }
 
 .form-group textarea {
@@ -121,44 +159,17 @@
     background-color: #d6336c;
     color: white;
     border: none;
-    padding: 12px;
+    padding: 12px 25px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    width: 100%;
     transition: background-color 0.3s;
+    display: block;
+    margin: 20px auto;
 }
 
 .btn-enviar:hover {
     background-color: #a61e4d;
-}
-
-/* GALERIAS */
-.galeria, .galeria-ifto {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.galeria img, .galeria-ifto img {
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #ff99bb;
-    transition: transform 0.3s;
-}
-
-.galeria img:hover, .galeria-ifto img:hover {
-    transform: scale(1.05);
-}
-
-/* RODAPÉ */
-#rodape {
-    text-align: center;
-    padding: 15px;
-    background-color: #ffccdd;
-    color: #a61e4d;
-    border-top: 3px solid #ff66b3;
 }
 
 /* REDES SOCIAIS */
@@ -190,6 +201,15 @@
     height: 24px;
 }
 
+/* RODAPÉ */
+#rodape {
+    text-align: center;
+    padding: 15px;
+    background-color: #ffccdd;
+    color: #a61e4d;
+    border-top: 3px solid #ff66b3;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 600px) {
     #menu div {
@@ -198,7 +218,11 @@
         min-width: 60px;
     }
     
-    .galeria, .galeria-ifto {
+    .galeria img {
+        width: 100%;
+    }
+    
+    .galeria-ifto {
         grid-template-columns: 1fr;
     }
 }
