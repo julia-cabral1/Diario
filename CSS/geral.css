@@ -419,3 +419,48 @@
     outline: none;
     box-shadow: 0 0 0 2px rgba(214, 51, 108, 0.2);
 }
+/* Adicione isso ao seu arquivo CSS/geral.css */
+
+/* Estilo para o overlay de fundo desfocado */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: none;
+}
+
+/* Estilo para a caixa de mensagem de erro */
+#error-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffebee;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1001;
+    display: none;
+    max-width: 80%;
+    text-align: center;
+}
+
+#error-message p {
+    color: #d32f2f;
+    margin: 0;
+}
+
+#error-message button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
